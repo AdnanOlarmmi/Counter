@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="counter.css" href="">
+    </head>
+    <style>
+        .counter{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%)
+        }
+        .counters{
+            color: black;
+            background-color: white;
+            border: black solid 5px;
+            cursor: pointer;
+        }
+        .count{
+            margin: 50%;
+        }
+    </style>
+    <body>
+
+        <div class="counter">
+            <p class="counters" id ="countup">
+                click to increase number
+            </p>
+            <p class='count'>
+                0
+            </p>
+            <p class="counters" id ="countdown">
+                click to decrease number
+            </p>
+        </div>
+        <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+        <script>
+            let counts = 0
+            $(document).ready(()=>
+            $('.counters').on('click', ()=>{
+                if(event.target.id === 'countup'){
+                    counts = counts + 1;
+                    $('.count').html(counts);
+                }
+                else{
+                    counts = counts - 1 ;
+                    $('.count').html(counts);
+                }
+            })
+
+        
+            
+            )
+        </script>
+    </body>
+</html>
